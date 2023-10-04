@@ -1,6 +1,16 @@
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
-})
+const withNextra = require("nextra")({
+	theme: "nextra-theme-docs",
+	themeConfig: "./theme.config.tsx",
+});
 
-module.exports = withNextra()
+module.exports = withNextra({
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "choyou.fr",
+				pathname: "/_/codacy/**",
+			},
+		],
+	},
+});
