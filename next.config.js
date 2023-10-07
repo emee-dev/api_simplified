@@ -8,8 +8,8 @@ module.exports = withNextra({
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "choyou.fr",
-				pathname: "/_/codacy/**",
+				hostname: "res.cloudinary.com",
+				pathname: "/dxxswax97/image/upload/**",
 			},
 		],
 	},
