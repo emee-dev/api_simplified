@@ -35,9 +35,9 @@ const colorCodes: ColorMap = {
 };
 ```
 
-## `Pick<Type, keysof Type>`
+## `Pick<Type, keysof_Type>`
 
-The Pick utility type helps us create a new type by allowing us pick the keys from an existing type
+The Pick utility type helps us create a new type by allowing us pick the keys we need from an existing type
 
 ```ts utilities.ts {8} copy
 type UserProfile = {
@@ -55,10 +55,9 @@ const publicProfile: PublicProfile = {
 };
 ```
 
-## `Omit<Type, keysof Type>`
+## `Omit<Type, keysof_Type>`
 
-The Omit utility type helps us create a new type by allowing us exclude the keys from an existing type.
-`This way we won't have to manually create a new type declaration`
+The Omit utility type helps us create a new type by allowing us exclude the keys we don't need from an existing type.
 
 ```ts utilities.ts copy
 type UserProfile = {
