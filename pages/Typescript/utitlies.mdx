@@ -1,0 +1,78 @@
+---
+title: Utility Functions
+description: The utility functions of Typescript best for certain use cases
+author: Emmanuel Ajike
+date: October 6, 2023
+---
+
+## Utility Functions
+
+TypeScript utility functions do specific tasks, helping us write less repetitive code.
+
+## `Record<Type, Type>`
+
+The Record utility type helps us describe the helps us define the type for the keys and values of an object.
+
+```ts utilities.ts {1} copy
+type Dog = Record<string, number>;
+const speedy: Dog = {
+	age: "ks", // it will throw an error
+};
+```
+
+```ts utilities.ts {7} copy
+enum Colors {
+	Red = "red",
+	Green = "green",
+	Blue = "blue",
+}
+
+type ColorMap = Record<Colors, string>;
+const colorCodes: ColorMap = {
+	[Colors.Red]: "#FF0000",
+	[Colors.Green]: "#00FF00",
+	[Colors.Blue]: "#0000FF",
+};
+```
+
+## `Pick<Type, keysof Type>`
+
+The Pick utility type helps us create a new type by allowing us pick the keys from an existing type
+
+```ts utilities.ts {8} copy
+type UserProfile = {
+	userId: number;
+	username: string;
+	email: string;
+	isAdmin: boolean;
+};
+
+type PublicProfile = Pick<UserProfile, "userId" | "username">;
+const publicProfile: PublicProfile = {
+	userId: 123,
+	username: "john_doe",
+	// Other properties like email and isAdmin are not allowed here.
+};
+```
+
+## `Omit<Type, keysof Type>`
+
+The Omit utility type helps us create a new type by allowing us exclude the keys from an existing type.
+`This way we won't have to manually create a new type declaration`
+
+```ts utilities.ts copy
+type UserProfile = {
+	userId: number;
+	username: string;
+	email: string;
+	isAdmin: boolean;
+};
+
+type PrivateProfile = Omit<UserProfile, "username">;
+const adminProfile: PrivateProfile = {
+	userId: 1199200388393,
+	email: "example@gmail.com",
+	isAdmin: true,
+	// Other properties like username is not allowed here.
+};
+```
