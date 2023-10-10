@@ -11,7 +11,7 @@ const ImageFile = ({
 	width: number;
 	height: number;
 }) => {
-	return <Image src={src} alt={alt} width={width} height={height} />;
+	return <Image src={src} alt={alt} width={width} height={height} sizes="(max-width: 768px) 100vw"/>;
 };
 
 export default ImageFile;
